@@ -1,0 +1,28 @@
+ul :nth-child(1n) {
+  background-color: #FF5733;
+}
+
+ul :nth-child(2n) {
+  background-color: #336BFF;
+}
+
+ul :nth-child(3n) {
+  background-color: #33FF55;
+}
+
+li {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  }
+  
+ul {
+    width: 300px;
+    height: 300px;
+    list-style: none; 
+    display: flex;
+    border: 1px solid #000000;
+    color: #FCFF33;
+    padding: 0px;
+  } 
