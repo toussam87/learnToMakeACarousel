@@ -1,38 +1,34 @@
 ul :nth-child(1n) {
-  background-color: #FF5733;
+    background-color: #FF5733;
 }
 
 ul :nth-child(2n) {
-  background-color: #336BFF;
+    background-color: #336BFF;
 }
 
 ul :nth-child(3n) {
-  background-color: #33FF55;
+    background-color: #33FF55;
 }
 
 li {
-  width: 300px;
-  height: 300px;
-  list-style: none; 
-  }
+    width: 300px;
+    height: 300px;
+    list-style: none;
+}
 
 ul {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: absolute;
 }
-  
+
 .main {
     width: 300px;
     height: 300px;
-    display: flex;
-    border: 1px solid #000000;
+    border: 2px solid #000000;
     color: #FCFF33;
     padding: 0px;
     position: relative;
     overflow: hidden;
-  } 
-
-.offscreen {
-  position: absolute;
-  left: -2000px;
 }
