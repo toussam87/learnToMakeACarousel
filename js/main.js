@@ -23,20 +23,28 @@ let carousel = document.querySelector(".main");
 
 //get navigating buttons 
 
+let movingSlide = {
+    currentVisibleSlide: 1,
+    widthOfSlide: 300,
+    numberOfSlides: 3
+}
 
 let prevFunction = () => {
-    alert("test");
+    console.log("test");
+    document.querySelector("ul").style.left="-300px";
 }
 
 let nextFunction = () => {
-    alert("next test");
-    let slides = document.querySelectorAll(".main ul li");
-   console.log(slides.length)
+    console.log("next test");
+    document.querySelector("ul").style.right="300px";
 }
 
 
-// Array.prototype.push() adds element to end of array 
-// Array.prototype.shift() removes first element in array
+// - slides that is visible
+// - width of the slide
+// - how many slides there are
+
+//FINAL QUESTION: How do I move my UL to the left in increments of 300 pixels depending on which slide number I'm on to a maximum allowed by the number of slides I have.
 
 //find way to know which slide of the carousel is in view
 
