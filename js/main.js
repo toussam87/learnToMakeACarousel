@@ -1,5 +1,4 @@
 window.onload = () => {
-
     //get navigating buttons & add event listeners to navigating buttons 
     document.querySelector(".prev").addEventListener("click", prevFunction, false);
 
@@ -12,66 +11,34 @@ window.onload = () => {
     //    console.log(slides.length)
 }
 
-
-//get carousel 
-let carousel = document.querySelector(".main");
-
 //get navigating buttons 
-
 let movingSlide = {
     currentVisibleSlide: 1,
     widthOfSlide: 300,
-    numberOfSlides: 3
+    numberOfSlides: 3,
 }
 
 // let test = document.querySelectorAll(".main ul li");
 //     console.log(test.length);
+console.log(movingSlide.currentVisibleSlide)
+let nextFunction = () => {
 
-let prevFunction = () => {
-    // console.log("test");
-    // document.querySelector("ul").style.left="-300px";
-
-    let slides = document.querySelectorAll("ul li");
-    console.log(slides.length);
-
-
-    switch (slides) {
-        case slides[0]:
-          console.log('don\'t move');
-          break;
-        case slides[1]: 
-          console.log('move to left -300');
-          document.querySelector("ul").style.left="-300px";    
-          break;      
-        case slides[2]: 
-          console.log('move to left -600px');
-          document.querySelector("ul").style.left="-600px";     
-          break; 
-        default:
-          console.log('PREV NOPE');
-      }
+    if (movingSlide.currentVisibleSlide < 3) {
+      document.querySelector("ul").style.left =  "-" + movingSlide.currentVisibleSlide * movingSlide.widthOfSlide + "px"; 
+      movingSlide.currentVisibleSlide++;
+      console.log(movingSlide.currentVisibleSlide);
+    } 
+    else if (movingSlide.currentVisibleSlide >= 3) {
+        let nxtBtn = document.querySelector(".next");
+            nxtBtn.className = 'noShow';
+    }
 }
 
-let nextFunction = () => {
-    // console.log("next test");
-
-    let slides = document.querySelectorAll("ul li");
-    console.log(slides.length);
-
-    switch (slides) {
-        case 0 :
-        console.log('move to left -300');
-        document.querySelector("ul").style.left="-300px";   
-          break;
-        case [1]: 
-          console.log('move to left -600');
-          document.querySelector("ul").style.left="-600px";         
-          break; 
-        case [2]: 
-          console.log('don\'t move');  
-        default:
-          console.log('NEXT NOPE');
-      }
+let prevFunction = () => {
+    
+    document.querySelector("ul").style.left += movingSlide.widthOfSlide + "px"; 
+    movingSlide.currentVisibleSlide--;
+    console.log(movingSlide.currentVisibleSlide);
 }
 
 
