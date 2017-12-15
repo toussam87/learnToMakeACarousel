@@ -11,14 +11,6 @@ let movingSlide = {
     widthOfSlide: 300,
     numberOfSlides: 3,
 }
-
-// let nxtBtn = document.querySelector(".next");
-// 
-// let prevBtn = document.querySelector(".prev");
-
-// if (movingSlide.currentVisibleSlide >= 2) {
-//     prevBtn.removeAttribute("noShow");
-// }
     
 console.log(movingSlide.currentVisibleSlide)
 let nextFunction = () => {
@@ -28,9 +20,14 @@ let nextFunction = () => {
       movingSlide.currentVisibleSlide++;
       console.log(movingSlide.currentVisibleSlide);
 
-        if (movingSlide.currentVisibleSlide === 3) {
+        if (movingSlide.currentVisibleSlide > 1 ){
+           let prevBtn = document.querySelector(".prev");
+           prevBtn.classList.remove("noShow");
+        }
+        
+        if (movingSlide.currentVisibleSlide >= 3) {
             let nxtBtn = document.querySelector(".next");
-            nxtBtn.className = 'noShow';
+            nxtBtn.className += " noShow";
         }
 
     } 
@@ -45,4 +42,15 @@ let prevFunction = () => {
             test = parseInt(test, 0);
         document.querySelector("ul").style.left = test + movingSlide.widthOfSlide + "px";  
     } 
+
+    if (movingSlide.currentVisibleSlide > 1 ){
+        let nextBtn = document.querySelector(".next");
+        nextBtn.classList.remove("noShow");
+        console.log(movingSlide.currentVisibleSlide);
+     }
+
+     if (movingSlide.currentVisibleSlide === 1 ){
+        let prevBtn = document.querySelector(".prev");
+        prevBtn.className += " noShow";
+     }
 }
