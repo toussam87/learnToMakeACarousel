@@ -1,3 +1,7 @@
+let prevBtn = document.querySelector(".prev"),
+    nxtBtn = document.querySelector(".next");
+
+
 window.onload = () => {
     //get navigating buttons & add event listeners to navigating buttons 
     document.querySelector(".prev").addEventListener("click", movingSlide.prevFunction, false);
@@ -8,21 +12,20 @@ window.onload = () => {
 let movingSlide = {
     currentVisibleSlide: 1,
     widthOfSlide: 300,
-    numberOfSlides: 3,
+    numberOfSlides: document.querySelectorAll("ul li"),
     nextFunction: () => {
+        console.log( movingSlide.numberOfSlides.length );
 
-        if (movingSlide.currentVisibleSlide < movingSlide.numberOfSlides) {
+        if (movingSlide.currentVisibleSlide <  movingSlide.numberOfSlides.length) {
           document.querySelector("ul").style.left =  "-" + movingSlide.currentVisibleSlide * movingSlide.widthOfSlide + "px"; 
           movingSlide.currentVisibleSlide++;
           console.log(movingSlide.currentVisibleSlide);
     
             if (movingSlide.currentVisibleSlide > 1 ){
-               let prevBtn = document.querySelector(".prev");
                prevBtn.classList.remove("noShow");
             }
             
-            if (movingSlide.currentVisibleSlide >= 3) {
-                let nxtBtn = document.querySelector(".next");
+            if (movingSlide.currentVisibleSlide >= movingSlide.numberOfSlides.length) {
                 nxtBtn.className += " noShow";
             }
     
@@ -39,13 +42,11 @@ let movingSlide = {
         } 
     
         if (movingSlide.currentVisibleSlide > 1 ){
-            let nextBtn = document.querySelector(".next");
-            nextBtn.classList.remove("noShow");
+            nxtBtn.classList.remove("noShow");
             console.log(movingSlide.currentVisibleSlide);
          }
     
          if (movingSlide.currentVisibleSlide === 1 ){
-            let prevBtn = document.querySelector(".prev");
             prevBtn.className += " noShow";
          }
     }
