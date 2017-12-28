@@ -1,4 +1,4 @@
-ul :nth-child(1n) {
+/* ul :nth-child(1n) {
     background-color: #FF5733;
 }
 
@@ -8,7 +8,7 @@ ul :nth-child(2n) {
 
 ul :nth-child(3n) {
     background-color: #33FF55;
-}
+} */
 
 li {
     width: 300px;
