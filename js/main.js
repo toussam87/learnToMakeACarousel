@@ -7,22 +7,24 @@ window.onload = () => {
     document.querySelector(".prev").addEventListener("click", movingSlide.prevFunction, false);
 
     document.querySelector(".next").addEventListener("click", movingSlide.nextFunction, false);
+
+    movingSlide.moveThrough();
 }
 
 let bgColor = ["#52FF33", "#9933FF", "#FEFE30", "#30EEFE"];
 
 let movingSlide = {
-    // bgColor: ["b50000", "#9933FF", "#FEFE30", "#30EEFE"],
     currentVisibleSlide: 1,
     widthOfSlide: 300,
-    numberOfSlides: document.querySelectorAll("ul li"),
+    numberOfSlides: document.querySelectorAll("ul li").length,
+    moveThrough: () => { 
+        document.querySelectorAll("ul li").forEach((slide, slideIndex ) => { 
+            slide.style.backgroundColor = bgColor[slideIndex%bgColor.length] 
+        })
+    },
     nextFunction: () => {
-        console.log( movingSlide.numberOfSlides.length );
         
-        if (movingSlide.currentVisibleSlide <  movingSlide.numberOfSlides.length) {
-            
-            // console.log(movingSlide.bgColor[0])
-            movingSlide.currentVisibleSlide.style.backgroundColor = "#" + bgColor[0];
+        if (movingSlide.currentVisibleSlide <  movingSlide.numberOfSlides) {
 
             document.querySelector("ul").style.left =  "-" + movingSlide.currentVisibleSlide * movingSlide.widthOfSlide + "px"; 
             movingSlide.currentVisibleSlide++;
@@ -32,9 +34,8 @@ let movingSlide = {
                prevBtn.classList.remove("noShow");
             }
             
-            if (movingSlide.currentVisibleSlide >= movingSlide.numberOfSlides.length) {
+            if (movingSlide.currentVisibleSlide >= movingSlide.numberOfSlides) {
                 nxtBtn.className += " noShow";
-                movingSlide.currentVisibleSlide.style.backgroundColor = "#" + bgColor[0];
             }
     
         } 
