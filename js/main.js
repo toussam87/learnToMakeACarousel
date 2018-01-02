@@ -12,7 +12,7 @@ window.onload = () => {
 }
 
 let bgColor = ["#52FF33", "#9933FF", "#FEFE30", "#30EEFE"];
-let bgImage = 'url(https://baconmockup.com/300/300/)';
+let bgImage = ['url(https://baconmockup.com/300/300/)', 'url(http://purrfectpals.org/wp-content/uploads/2014/03/DSC_85581-e1404783195381-300x300.jpg)', 'url(http://images.meredith.com/content/dam/bhg/Images/2013/2/4/295212_3839391670148_668524905_n.jpg.rendition.largest.ss.jpg)'];
 
 let movingSlide = {
     currentVisibleSlide: 1,
@@ -20,7 +20,9 @@ let movingSlide = {
     numberOfSlides: document.querySelectorAll("ul li").length,
     moveThrough: () => { 
         document.querySelectorAll("ul li").forEach((slide, slideIndex ) => { 
-            slide.style.backgroundImage = bgImage; 
+            console.log(slideIndex);
+            console.log(slide);
+            slide.style.backgroundImage = bgImage[slideIndex%bgImage.length]; 
         })
     },
     nextFunction: () => {
