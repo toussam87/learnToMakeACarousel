@@ -12,6 +12,7 @@ window.onload = () => {
 }
 
 let bgColor = ["#52FF33", "#9933FF", "#FEFE30", "#30EEFE"];
+let bgImage = 'url(https://baconmockup.com/300/300/)';
 
 let movingSlide = {
     currentVisibleSlide: 1,
@@ -19,7 +20,7 @@ let movingSlide = {
     numberOfSlides: document.querySelectorAll("ul li").length,
     moveThrough: () => { 
         document.querySelectorAll("ul li").forEach((slide, slideIndex ) => { 
-            slide.style.backgroundColor = bgColor[slideIndex%bgColor.length] 
+            slide.style.backgroundImage = bgImage; 
         })
     },
     nextFunction: () => {
