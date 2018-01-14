@@ -14,8 +14,15 @@ window.onload = () => {
 let bgColor = ["#52FF33", "#9933FF", "#FEFE30", "#30EEFE"];
 let bgImage = ['url(https://baconmockup.com/300/300/)', 'url(http://purrfectpals.org/wp-content/uploads/2014/03/DSC_85581-e1404783195381-300x300.jpg)', 'url(http://images.meredith.com/content/dam/bhg/Images/2013/2/4/295212_3839391670148_668524905_n.jpg.rendition.largest.ss.jpg)'];
 
-function addAnimiation(element) {
-    element.classList.add("animation")
+
+
+var getWidth = function () {
+    var width = elem.scrollWidth + 'px'; 
+    moveLeft(width);
+};
+
+function moveLeft(width) {
+    
 }
 
 let movingSlide = {
@@ -32,14 +39,8 @@ let movingSlide = {
     nextFunction: () => {
         
         if (movingSlide.currentVisibleSlide <  movingSlide.numberOfSlides) {
-
-            var test = document.querySelector("ul");
-            var test2 = document.querySelector("ul li");
-
-            test.style.transform = "translateX(-" + movingSlide.currentVisibleSlide * movingSlide.widthOfSlide + "px)";
-            addAnimiation(test);
-            test.addEventListener('animationEvent', function(event) { this.classList = ''}, false)
-
+            var test = "300px";
+            document.querySelector("ul").style.transform = "translateX(-" + movingSlide.currentVisibleSlide * movingSlide.widthOfSlide + "px)";
             movingSlide.currentVisibleSlide++;
             console.log(movingSlide.currentVisibleSlide);
     
@@ -50,7 +51,6 @@ let movingSlide = {
             if (movingSlide.currentVisibleSlide >= movingSlide.numberOfSlides) {
                 nxtBtn.className += " noShow";
             }
-            
     
         } 
     },
