@@ -33,13 +33,22 @@ let movingSlide = {
         
         if (movingSlide.currentVisibleSlide <  movingSlide.numberOfSlides) {
 
-            var test = document.querySelector("ul");
-            var test2 = document.querySelector("ul li");
+            // var test = document.querySelector("ul");
+            // var test2 = document.querySelector("ul li");
 
-            test.style.transform = "translateX(-" + movingSlide.currentVisibleSlide * movingSlide.widthOfSlide + "px)";
-            addAnimiation(test);
-            test.addEventListener('animationEvent', function(event) { this.classList = ''}, false)
+            // test.style.transform = "translateX(-" + movingSlide.currentVisibleSlide * movingSlide.widthOfSlide + "px)";
+            // addAnimiation(test);
+            // test.addEventListener('animationEvent', function(event) { this.classList = ''}, false);
 
+            document.querySelector("ul").animate([
+                // keyframes
+                { transform: 'translateX(' + movingSlide.currentVisibleSlide * movingSlide.widthOfSlide + 'px)' }, 
+                { transform: 'translateX(-' + movingSlide.currentVisibleSlide * movingSlide.widthOfSlide + 'px)' }
+                
+              ], { 
+                // timing options
+                duration: 1000
+              });;
             movingSlide.currentVisibleSlide++;
             console.log(movingSlide.currentVisibleSlide);
     
