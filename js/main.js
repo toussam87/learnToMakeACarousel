@@ -1,7 +1,7 @@
 let prevBtn = document.querySelector(".prev"),
     nxtBtn = document.querySelector(".next");
 
-
+//abcdefg
 window.onload = () => {
     //get navigating buttons & add event listeners to navigating buttons 
     document.querySelector(".prev").addEventListener("click", movingSlide.prevFunction, false);
