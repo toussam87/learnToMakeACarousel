@@ -1,5 +1,5 @@
 .main {
-    width: 500px;
+    /* width: 500px; */
     margin: 0 auto;
     text-align: center;
 }
@@ -37,9 +37,9 @@ ul {
 }
 
 .carousel {
-    display: inline-block;
-    width: 300px;
-    height: 300px;
+    display: block;
+    /* width: 300px;
+    height: 300px; */
     border: 2px solid #000000;
     color: #FCFF33;
     padding: 0px;
@@ -47,12 +47,23 @@ ul {
     overflow: hidden;
 }
 
-.nav {
+/* .main .nav {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+} */
+
+.nav div {
     display: inline-block;
-    position: absolute;
-    width: 60px;
-    height: auto;
 }
+
+.nav {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+} 
 
 .nav .prev {
     margin: 5px 5px 5px 20px;
