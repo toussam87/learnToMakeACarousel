@@ -11,7 +11,7 @@ function addAnimiation(element) {
 let movingSlide = {
     currentVisibleSlide: 1,
     widthOfSlide: 500,
-    currentPosition: 1,
+    currentSlide: 1,
     numberOfSlides: document.querySelectorAll(".main .carousel ul div"),
     selectSlide: () => {
         var navSlideValue = event.target.dataset.value;
